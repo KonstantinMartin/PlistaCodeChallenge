@@ -1,0 +1,81 @@
+<mat-card>
+  <div class="header-edit-view">
+    Edit View
+  </div>
+  <mat-card-content>
+    <form *ngIf="item" [formGroup]="PlistaForm" (ngSubmit)="saveItem()" novalidate>
+
+      <mat-form-field class="form-input-static-fields">
+        <mat-label>a</mat-label>
+        <input matInput [value]="item.a" disabled>
+      </mat-form-field>
+
+      <mat-form-field class="form-input-static-fields">
+        <mat-label>Campaign ID</mat-label>
+        <input matInput [value]="item.campaignid" disabled>
+      </mat-form-field>
+
+      <mat-form-field class="form-input-static-fields">
+        <mat-label>User ID</mat-label>
+        <input matInput [value]="item.userid" disabled>
+      </mat-form-field>
+
+      <mat-form-field class="form-input-static-fields">
+        <mat-label>Friend Domain ID</mat-label>
+        <input matInput [value]="item.frienddomainid" disabled>
+      </mat-form-field>
+
+      <mat-form-field class="form-input-fields">
+        <mat-label>camp-cpc</mat-label>
+        <input class="clickable" type="number" matInput formControlName="camp_cpc">
+        <mat-icon matSuffix>euro_symbol</mat-icon>
+        <mat-error *ngIf="PlistaForm.controls.camp_cpc.hasError('required')">camp_cpc is required</mat-error>
+        <mat-error *ngIf="PlistaForm.controls.camp_cpc.hasError('pattern')">Please chooise a valid currency format (max. 3 decimal, e.g 0,333)</mat-error>
+      </mat-form-field>
+
+      <section class="form-input-fields">
+        <mat-label>Date & Time</mat-label>
+          <angular2-date-picker id="date-time-picker" formControlName="date" [(ngModel)]="item.date" [settings]="settings">
+          </angular2-date-picker>
+        <mat-icon matSuffix>event</mat-icon>
+      </section>
+
+      <section class="form-input-static-fields">
+        <mat-label class="edit-view-style">Freeclick<br></mat-label>
+        <mat-checkbox class="clickable" type="text" matInput readonly formControlName="freeclick" [checked]="item.freeclick"></mat-checkbox>
+      </section>
+
+
+      <section class="form-input-static-fields">
+        <mat-label class="edit-view-style">Network<br></mat-label>
+        <mat-radio-group formControlName="network">
+          <mat-radio-button *ngFor="let net of networks" [value]="net">{{net}}</mat-radio-button>
+        </mat-radio-group>
+      </section>
+
+      <mat-form-field class="form-input-fields">
+        <mat-label>Plista Product</mat-label>
+        <mat-select class="set-placeholder-black" formControlName="PlistaProduct">
+          <mat-option *ngFor="let product of products" [value]="product">
+            {{product}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button mat-raised-button class="save-button" type="submit" [disabled]="!PlistaForm.valid">SAVE</button>
+        <button mat-raised-button class="back-button" (click)="goBack()">BACK</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+
+
+  <div [hidden]="counter === 0 " (click)="changeItem('-1')" >
+    <mat-icon class="arrow-left">keyboard_arrow_left</mat-icon>
+  </div>
+
+  <div *ngIf="allItems" [hidden]="counter === allItems.length - 1"(click)="changeItem('1')" >
+    <mat-icon class="arrow-right">keyboard_arrow_right</mat-icon>
+  </div>
+</mat-card>
+

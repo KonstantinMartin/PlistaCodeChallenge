@@ -1,0 +1,127 @@
+mat-card {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 30px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.header-edit-view {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 600;
+  box-sizing: border-box;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: #ff4081;
+  padding: 15px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 20px;
+}
+
+.mat-card-content {
+  margin-top: 50px;
+}
+
+.form-description {
+  font-size: 25px;
+  float: left;
+  padding-bottom: 20px;
+}
+
+.form-input-static-fields {
+  width:100%;
+  height: 30px;
+  font-size: 20px;
+  margin: 0px 0px 40px 0px;
+}
+
+.form-input-fields {
+  width:100%;
+  height: 30px;
+  font-size: 20px;
+  margin: 0px 0px 55px 0px;
+}
+.clickable {
+  cursor: pointer;
+}
+
+::ng-deep #date-time-picker .wc-date-container {
+  float: left;
+  width: 470px !important;
+  height: 30px;
+  border: none !important;
+  border-bottom: 1px solid black !important;
+
+  padding-left: 0;
+  margin-bottom: 1px;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  background: #ffffff;
+  line-height: 20px;
+}
+
+::ng-deep #date-time-picker span {
+  color: black !important;
+}
+
+
+.edit-view-style {
+  font-size: 15px;
+  color: #948787;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.back-button, .save-button {
+  background: #ff4081;
+  color: #ffffff;
+}
+
+.back-button:hover, .save-button:hover {
+  background: #ffffff;
+  color:#ff4081;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.mat-card-actions {
+  margin-left: 0px;
+  margin-right: -8px;
+  padding: 8px 0;
+  margin-bottom: -15px;
+}
+
+.arrow-left, .arrow-right {
+  font-size: 70px;
+  position: absolute;
+  cursor: pointer;
+  font-size: 100px;
+  cursor: pointer;
+  color: #ff4081;
+}
+
+.arrow-right {
+  top: 40%;
+  left: 550px;
+}
+
+.arrow-left {
+  top: 40%;
+  left: -90px;
+}
+
+.mat-radio-button {
+  margin-right: 15px;
+}
